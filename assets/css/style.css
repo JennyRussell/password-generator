@@ -50,12 +50,13 @@ body{
  form {
     border: dashed 2px rgb(190, 184, 184);
     background:white;
-    margin-top: 2%;
-    margin-bottom: 3%;
+    align-self: center;
+    margin-top: 30px;
     height: 80%; 
-    width: 98%;
+    width: 100%;
     border-radius: 10px;
-    padding-right: 25px;
+    /* padding-right: 25px; */
+    
   
 }
 
