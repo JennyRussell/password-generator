@@ -76,6 +76,7 @@ form p {
     font-family:Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace;
     font-size: 2rem;
     font-weight: 100px;
+    word-wrap: break-word;
 }
 
 form label {
