@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet"
-     type = "text/css"
-     href = "assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <title>Password Generator</title>
 </head>
+
 <body>
-    <h1>Password Generator</h1>   
-        <container class="container">
-        <p id="generate">Generate a Password</p>
-             <container class="inner-box">
-                <form>
-                     <p id="password">Your Secure Password</p>
-                </form>
-    </container>
-        <button id="button"> Generate Password</button>
+    <h1 data-testid="gen-password-title">Password Generator</h1>
+    <container class="container">
+        <p data-testid="gen-password-text" id="generate">Generate a Password</p>
+        <container class="inner-box">
+            <form>
+                <p data-testid="password" id="password">Your Secure Password</p>
+            </form>
+        </container>
+        <button data-testid="gen-password-button" id="button"> Generate Password</button>
     </container>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
