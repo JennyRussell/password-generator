@@ -1,11 +1,8 @@
 // selects the button to activate password generation code
-var getPasswordButton = document.querySelector('#button');
+let getPasswordButton = document.querySelector('#button');
 
 getPasswordButton.addEventListener("click", () => {
-    pass = generatePassword();
-    if (pass != undefined) {
-        document.getElementById("password").innerHTML = pass;
-    }
+    generatePassword();
 })
 
 /*
@@ -13,7 +10,6 @@ getPasswordButton.addEventListener("click", () => {
 */
 function inputNumber() {
     let promptResponse = prompt('Choose a password length between 8 - 128 characters')
-    let selectedNumber;
     if (promptResponse == null) {
         alert("You've selected 'Cancel' please try again.")
         return null;
@@ -118,24 +114,33 @@ function generatePassword() {
         concatChoice = symbolsArray;
     };
 
-    var userLength = []; // placeholder for selected user length
+    let userLength = []; // placeholder for selected user length
 
     // loop generates a random selecion for all the variables and pushes into the 
     // pasword array 
-    for (var i = 0; i < enterNumber; i++) {
-        var selection = concatChoice[Math.floor(Math.random() * concatChoice.length)];
+    for (let i = 0; i < enterNumber; i++) {
+        let selection = concatChoice[Math.floor(Math.random() * concatChoice.length)];
         userLength.push(selection);
     }
-
     // changes generated password to string
-    var pass = userLength.join("");
-    UserInput(pass);
-    return pass;
-
+    let pass = escapeHtml(userLength.join(""));
+    userInput(pass);
 }
 
 // displays password in the placeholder field (#password) as a string
-function UserInput(pass) {
+function userInput(pass) {
     document.getElementById("password").innerHTML = pass;
+}
 
+// I found a bug where some special characters would cause changes to password length, 
+// so I found this solution on Stack Overflow to fix it
+// link: https://stackoverflow.com/questions/6234773/can-i-escape-html-special-chars-in-javascript
+
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
