@@ -14,7 +14,7 @@ Numbers: true/false;
 ```
 # Appearance
 
-![ScreenShot](Screen Shot 2021-02-25 at 5.16.56 PM.png)
+![Password Generator](ScreenShot.png "Application appearance in browser")
 
 
 ## Pull Permission
